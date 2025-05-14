@@ -1,6 +1,7 @@
 #pragma once
 #include "Level.h"
 #include "Paddle.h"
+#include "Score.h"
 
 class Pong : public Level
 {
@@ -17,5 +18,7 @@ private:
 
 	Paddle* playerOne;
 	Paddle* playerTwo;
+	Score* playerOneScore;
+	Score* playerTwoScore;
 };
 

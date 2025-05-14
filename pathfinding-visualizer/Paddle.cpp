@@ -1,7 +1,5 @@
 #include "Paddle.h"
 
-#include <iostream>
-
 Paddle::Paddle(sf::Vector2f startPosition)
 	: position{ startPosition }
 {
