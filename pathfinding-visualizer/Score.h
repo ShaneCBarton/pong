@@ -15,5 +15,6 @@ private:
     sf::Vector2f position;
     sf::Text scoreText;
     sf::Font scoreFont;
+    int score;
 };
 

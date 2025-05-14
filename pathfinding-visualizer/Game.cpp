@@ -1,5 +1,6 @@
 #include "game.h"
 #include "Pong.h"
+#include <iostream>
 
 Game::Game()
 	: renderWindow(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "WINDOW")), clock{}
@@ -34,6 +35,9 @@ void Game::Input()
 void Game::Update(float deltaTime)
 {
 	loadedLevel->Update(deltaTime);
+	static int updateCount = 0;
+	updateCount++;
+	std::cout << "Update called: " << updateCount << std::endl;
 }
 
 void Game::Render(sf::RenderWindow* window)
@@ -56,15 +60,13 @@ void Game::Run()
 		Init();
 	}
 
-	float previousTime = clock.restart().asSeconds();
+	clock.restart();
 	float waitTime = 0.f;
 
 	while (IsRunning)
 	{
-		float currentTime = clock.restart().asSeconds();
-		float elapsedTime = currentTime - previousTime;
-		previousTime = currentTime;
-		waitTime += elapsedTime;
+		float frameTime = clock.restart().asSeconds();
+		waitTime += frameTime;
 
 		Input();
 

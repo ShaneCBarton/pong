@@ -7,8 +7,8 @@ Pong::Pong()
 	playerOne = new Paddle(sf::Vector2f(10, HEIGHT / 2 - 50));
 	playerTwo = new Paddle(sf::Vector2f(1280 - 40, HEIGHT / 2 - 50));
 
-	playerOneScore = new Score(sf::Vector2f(WIDTH / 4, 100));
-	playerTwoScore = new Score(sf::Vector2f(WIDTH / 4, 100));
+	playerOneScore = new Score(sf::Vector2f(WIDTH / 4, 50));
+	playerTwoScore = new Score(sf::Vector2f((WIDTH / 4) + (WIDTH / 2), 50));
 }
 
 Pong::~Pong()
