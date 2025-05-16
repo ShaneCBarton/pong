@@ -1,11 +1,11 @@
 #include "Paddle.h"
 #include "InputManager.h"
-#include <iostream>
+#include "Game.h"
 
 Paddle::Paddle(sf::Vector2f startPosition, sf::Keyboard::Key upKey, sf::Keyboard::Key downKey)
 	: position{ startPosition }, upKey{ upKey }, downKey{ downKey }, moveSpeed{ 250.f }
 {
-	
+
 }
 
 void Paddle::Start()
@@ -33,10 +33,18 @@ void Paddle::HandleInput(float deltaTime)
 	if (InputManager::Instance->IsKeypressed(upKey))
 	{
 		position.y -= moveSpeed * deltaTime;
+		if (position.y < 5)
+		{
+			position.y = 5;
+		}
 	}
 	if (InputManager::Instance->IsKeypressed(downKey))
 	{
 		position.y += moveSpeed * deltaTime;
+		if (position.y > HEIGHT - shape.getSize().y - 5)
+		{
+			position.y = HEIGHT - shape.getSize().y - 5;
+		}
 	}
 }
 
