@@ -12,7 +12,6 @@ public:
 
 private:
 	void Start() override;
-	void Input() override;
 	void Update(float deltaTime) override;
 	void Render(sf::RenderWindow* window) override;
 

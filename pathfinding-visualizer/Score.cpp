@@ -25,11 +25,7 @@ void Score::Start()
 
 void Score::Update(float deltaTime)
 {
-	score++;
 	scoreText.setString(std::to_string(score));
-
-	sf::FloatRect bounds = scoreText.getLocalBounds();
-	scoreText.setOrigin(bounds.left + bounds.width / 2, bounds.top + bounds.height / 2);
 }
 
 void Score::Render(sf::RenderWindow* renderWindow)

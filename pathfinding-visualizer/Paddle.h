@@ -8,7 +8,7 @@ class Paddle :
 {
 
 public:
-    Paddle(sf::Vector2f startPosition);
+    Paddle(sf::Vector2f startPosition, sf::Keyboard::Key upKey, sf::Keyboard::Key downKey);
     void Start() override;
     void Update(float deltaTime) override;
     void Render(sf::RenderWindow* window) override;
@@ -16,5 +16,7 @@ public:
 private:
     sf::RectangleShape shape;
     sf::Vector2f position;
+    sf::Keyboard::Key upKey;
+    sf::Keyboard::Key downKey;
 };
 

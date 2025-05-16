@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Level.h"
+#include "InputManager.h"
 
 #define WIDTH 1280
 #define HEIGHT 720

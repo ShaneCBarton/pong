@@ -3,19 +3,22 @@
 #include <iostream>
 
 Game::Game()
-	: renderWindow(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "WINDOW")), clock{}
+	: renderWindow(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "PONG")), clock{}
 {
 	renderWindow->setFramerateLimit(FRAME_RATE);
+	InputManager::Instance = new InputManager();
 }
 
 Game::~Game()
 {
 	delete renderWindow;
 	delete loadedLevel;
+	delete InputManager::Instance;
+	InputManager::Instance = nullptr;
 }
 
 void Game::Init()
-{	
+{
 	SetLevel(new Pong());
 	IsRunning = true;
 }
@@ -29,15 +32,15 @@ void Game::Input()
 		{
 			IsRunning = false;
 		}
+
+		InputManager::Instance->UpdateEvents(event);
 	}
+
 }
 
 void Game::Update(float deltaTime)
 {
 	loadedLevel->Update(deltaTime);
-	static int updateCount = 0;
-	updateCount++;
-	std::cout << "Update called: " << updateCount << std::endl;
 }
 
 void Game::Render(sf::RenderWindow* window)
