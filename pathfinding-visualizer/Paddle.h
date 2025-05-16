@@ -14,9 +14,12 @@ public:
     void Render(sf::RenderWindow* window) override;
 
 private:
+    void HandleInput(float deltaTime);
     sf::RectangleShape shape;
     sf::Vector2f position;
     sf::Keyboard::Key upKey;
     sf::Keyboard::Key downKey;
+    float moveSpeed;
+
 };
 
