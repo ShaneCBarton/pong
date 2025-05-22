@@ -13,5 +13,6 @@ public:
 
 protected:
 	std::vector<GameObject*> gameObjects;
+	std::vector<RenderObject*> renderObjects;
 };
 

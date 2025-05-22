@@ -2,6 +2,7 @@
 #include "Level.h"
 #include "Paddle.h"
 #include "Score.h"
+#include "Ball.h"
 
 class Pong : public Level
 {
@@ -19,5 +20,6 @@ private:
 	Paddle* playerTwo;
 	Score* playerOneScore;
 	Score* playerTwoScore;
+	Ball* ball;
 };
 

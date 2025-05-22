@@ -9,6 +9,8 @@ Pong::Pong()
 
 	playerOneScore = new Score(sf::Vector2f(WIDTH / 4, 50));
 	playerTwoScore = new Score(sf::Vector2f((WIDTH / 4) + (WIDTH / 2), 50));
+
+	ball = new Ball(sf::Vector2f(WIDTH / 2, HEIGHT / 2));
 }
 
 Pong::~Pong()
@@ -17,6 +19,7 @@ Pong::~Pong()
 	delete playerTwo;
 	delete playerOneScore;
 	delete playerTwoScore;
+	delete ball;
 }
 
 void Pong::Start()
@@ -25,6 +28,7 @@ void Pong::Start()
 	gameObjects.push_back(playerTwo);
 	gameObjects.push_back(playerOneScore);
 	gameObjects.push_back(playerTwoScore);
+	gameObjects.push_back(ball);
 
 	for (GameObject* object : gameObjects)
 	{
