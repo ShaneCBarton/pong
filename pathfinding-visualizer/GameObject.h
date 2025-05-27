@@ -9,9 +9,9 @@ public:
 	virtual void Start() = 0;
 	virtual void Update(float deltaTime) = 0;
 	virtual void Render(sf::RenderWindow* window) = 0;
+	sf::FloatRect GetPosition() { return shape.getLocalBounds(); }
 
 protected:
-	sf::Transformable transform;
-	sf::CircleShape shape;
+	sf::RectangleShape shape;
 };
 

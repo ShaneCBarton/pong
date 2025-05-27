@@ -2,6 +2,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "GameObject.h"
+#include "RenderObject.h"
 
 class Level
 {
