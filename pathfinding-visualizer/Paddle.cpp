@@ -23,7 +23,7 @@ void Paddle::Update(float deltaTime)
 	shape.setPosition(position);
 }
 
-void Paddle::Render(sf::RenderWindow* window)
+void Paddle::Render(std::shared_ptr<sf::RenderWindow> window)
 {
 	window->draw(shape);
 }

@@ -14,17 +14,17 @@ public:
 	Game();
 	~Game();
 	void Run();
-	Level* GetLoadedLevel();
+	std::shared_ptr<Level> GetLoadedLevel();
 
 private:
 	void Init();
 	void Input();
 	void Update(float deltaTime);
-	void Render(sf::RenderWindow* window);
-	void SetLevel(Level* level);
+	void Render(std::shared_ptr<sf::RenderWindow> window);
+	void SetLevel(std::shared_ptr<Level> level);
 
-	sf::RenderWindow* renderWindow;
+	std::shared_ptr<sf::RenderWindow> renderWindow;
+	std::shared_ptr<Level> loadedLevel{ nullptr };
 	sf::Clock clock;
 	bool IsRunning{ false };
-	Level* loadedLevel{ nullptr };
 };

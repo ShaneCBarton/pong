@@ -6,7 +6,7 @@ class Background :
 public:
     Background();
     void Start() override;
-    void Render(sf::RenderWindow* window) override;
+    void Render(std::shared_ptr<sf::RenderWindow> window) override;
 
 private:
     sf::Vector2f position;

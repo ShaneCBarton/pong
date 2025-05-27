@@ -16,7 +16,7 @@ void Background::Start()
 	}
 }
 
-void Background::Render(sf::RenderWindow* window)
+void Background::Render(std::shared_ptr<sf::RenderWindow> window)
 {
 	for (const sf::RectangleShape& rect : rects)
 	{

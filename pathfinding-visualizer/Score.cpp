@@ -28,7 +28,7 @@ void Score::Update(float deltaTime)
 	scoreText.setString(std::to_string(score));
 }
 
-void Score::Render(sf::RenderWindow* renderWindow)
+void Score::Render(std::shared_ptr<sf::RenderWindow> renderWindow)
 {
 	renderWindow->draw(scoreText);
 }

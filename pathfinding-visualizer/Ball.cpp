@@ -17,7 +17,7 @@ void Ball::Update(float deltaTime)
 	shape.setPosition(position);
 }
 
-void Ball::Render(sf::RenderWindow* window)
+void Ball::Render(std::shared_ptr<sf::RenderWindow> window)
 {
 	window->draw(shape);
 }

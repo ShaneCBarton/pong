@@ -11,15 +11,13 @@ Game::Game()
 
 Game::~Game()
 {
-	delete renderWindow;
-	delete loadedLevel;
 	delete InputManager::Instance;
 	InputManager::Instance = nullptr;
 }
 
 void Game::Init()
 {
-	SetLevel(new Pong());
+	SetLevel(std::shared_ptr<Pong> (new Pong()));
 	IsRunning = true;
 }
 
@@ -43,14 +41,14 @@ void Game::Update(float deltaTime)
 	loadedLevel->Update(deltaTime);
 }
 
-void Game::Render(sf::RenderWindow* window)
+void Game::Render(std::shared_ptr<sf::RenderWindow> window)
 {
 	renderWindow->clear(sf::Color::Black);
 	loadedLevel->Render(renderWindow);
 	renderWindow->display();
 }
 
-void Game::SetLevel(Level* level)
+void Game::SetLevel(std::shared_ptr<Level> level)
 {
 	loadedLevel = level;
 	loadedLevel->Start();
@@ -83,7 +81,7 @@ void Game::Run()
 	}
 }
 
-Level* Game::GetLoadedLevel()
+std::shared_ptr<Level> Game::GetLoadedLevel()
 {
 	if (loadedLevel)
 	{

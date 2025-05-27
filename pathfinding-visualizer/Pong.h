@@ -15,13 +15,13 @@ public:
 private:
 	void Start() override;
 	void Update(float deltaTime) override;
-	void Render(sf::RenderWindow* window) override;
+	void Render(std::shared_ptr<sf::RenderWindow> window) override;
 
-	Paddle* playerOne;
-	Paddle* playerTwo;
-	Score* playerOneScore;
-	Score* playerTwoScore;
-	Ball* ball;
-	Background* bg;
+	std::unique_ptr<Paddle> playerOne;
+	std::unique_ptr<Paddle> playerTwo;
+	std::unique_ptr<Score> playerOneScore;
+	std::unique_ptr<Score> playerTwoScore;
+	std::unique_ptr<Ball> ball;
+	std::unique_ptr<Background> bg;
 };
 

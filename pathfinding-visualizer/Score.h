@@ -8,7 +8,7 @@ public:
     Score(sf::Vector2f startPosition);
     void Start() override;
     void Update(float deltaTime) override;
-    void Render(sf::RenderWindow* renderWindow) override;
+    void Render(std::shared_ptr<sf::RenderWindow> renderWindow) override;
 
 private:
     void InitScore();

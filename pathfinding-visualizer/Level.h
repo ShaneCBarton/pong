@@ -10,10 +10,10 @@ class Level
 public:
 	virtual void Start() = 0;
 	virtual void Update(float deltaTime) = 0;
-	virtual void Render(sf::RenderWindow* window) = 0;
+	virtual void Render(std::shared_ptr<sf::RenderWindow> window) = 0;
 
 protected:
-	std::vector<GameObject*> gameObjects;
-	std::vector<RenderObject*> renderObjects;
+	std::vector<std::unique_ptr<GameObject>> gameObjects;
+	std::vector<std::unique_ptr<RenderObject>> renderObjects;
 };
 

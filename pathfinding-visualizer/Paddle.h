@@ -11,7 +11,7 @@ public:
     Paddle(sf::Vector2f startPosition, sf::Keyboard::Key upKey, sf::Keyboard::Key downKey);
     void Start() override;
     void Update(float deltaTime) override;
-    void Render(sf::RenderWindow* window) override;
+    void Render(std::shared_ptr<sf::RenderWindow> window) override;
 
 private:
     void HandleInput(float deltaTime);
@@ -20,6 +20,5 @@ private:
     sf::Keyboard::Key upKey;
     sf::Keyboard::Key downKey;
     float moveSpeed;
-
 };
 
